@@ -1,0 +1,10 @@
+root = "." # The root directory of the project - Thư mục gốc của dự án
+tmp_dir = "tmp" # The temporary directory where air will store its temporary files - 
+# Thư mục tạm thời nơi air sẽ lưu trữ các tập tin tạm thời của nó
+
+[build] # The build configuration - Cấu hình xây dựng
+  bin = "main" # The name of the binary file to be generated after building the project - Tên của tệp nhị phân sẽ được tạo sau khi xây dựng dự án
+  cmd = "go build -o {{.Output}} {{.Input}}" # The command to build the project - Lệnh xây dựng dự án
+  exclude = ["tmp/*", "client/*"] # Specifies the directories to be excluded from monitoring for changes - Chỉ định các thư mục sẽ bị loại trừ khỏi việc giám sát các thay đổi
+  include = ["**/*.go"] # Specifies the file patterns to be included for monitoring - Chỉ định các mẫu tệp sẽ được đưa vào để giám sát
+  ignore = ["tmp/*"] # Specifies the files or directories to be ignored when triggering a build - Chỉ định các tệp hoặc thư mục sẽ bị bỏ qua khi kích hoạt bản dựng
